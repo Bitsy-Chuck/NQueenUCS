@@ -194,9 +194,9 @@ class Util:
                     adj_row = []
                     for i in range(size):
                         adj_row.append(i)
-                    # print("Adjoint before: ", adj_row)
+                    # print("Adjacent before: ", adj_row)
                     adj_row.remove(row)
-                    # print("Adjoint after: ", adj_row)
+                    # print("Adjacent after: ", adj_row)
                     for new_row in adj_row:
                         # print("*****", new_row)
                         new_state = State()
