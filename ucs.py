@@ -3,12 +3,27 @@ import random
 import time
 import queue
 import random
-from operator import mul    # or mul=lambda x,y:x*y
+from operator import mul
 from fractions import Fraction
 from functools import reduce
 
 print('Enter n: ')
 size = int(input())
+
+
+
+
+def create_matrix(length):
+    map = []
+    for i in range(length):
+        map.append(list())
+
+    for row in range(length):
+        for column in range(length):
+            map[row].append(0)
+
+
+    return map
 
 if(size == 8):
     ll=create_matrix(8)
@@ -32,25 +47,15 @@ if(size == 8):
 0  0  0  0  0  1  0  0
 0  0  1  0  0  0  0  0
     """)
+    exit()
 
-
-
-def create_matrix(length):
-    map = []
-    for i in range(length):
-        map.append(list())
-
-    for row in range(length):
-        for column in range(length):
-            map[row].append(0)
-
-
-    return map
 
 def create_matrix_start(length):
     map = [[0,0,0,0],[0,0,0,0],[0,0,0,0],[1,1,1,1]]
 
     return map
+
+
 
 class State:
     def __init__(self):
@@ -280,8 +285,9 @@ env = Util()
 env.current_state = env.random_start_state()
 env.current_state.show()
 
-for i in range(8):
-    print(ll[i])
+
+#for i in range(8):
+    #print(ll[i])
 agent = UniformCostSearch(env.current_state, env.goal, env.action)
 state = agent.search()
 
